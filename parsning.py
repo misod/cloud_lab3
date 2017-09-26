@@ -42,20 +42,15 @@ def searchWords(wordsToSearch, patToFile):
                 if line != '\n':
                     parsedJson = json.loads(line)
                     stringToAnalyze = parsedJson['text']
-                    # print
-                    #print '<------------------>'
-                    # print stringToAnalyze.lower()
-                    # print countWordsInString(wordsToSearch, stringToAnalyze)
-                    # print
-                    wordsToSearch = countWordsInString(wordsToSearch, stringToAnalyze)
+                    countWordsInString(wordsToSearch, stringToAnalyze)
 
 
 
 
-                    i += 1
-                    if i > 2000:
-                        print 'raderna i filen klar ------->'
-                        return wordsToSearch
+                    # i += 1
+                    # if i > 8000:
+                    #     print 'raderna i filen klar ------->'
+                    #     return wordsToSearch
 
 
     except Exception as e:
@@ -71,14 +66,10 @@ def searchWords(wordsToSearch, patToFile):
 files = getFiles(dirToJson)
 
 for f in files:
-    wordToFind_c = copy.deepcopy(wordToFind)
+    #wordToFind_c = copy.deepcopy(wordToFind)
     if f[0] != '.':
-          resultat = searchWords(wordToFind_c, dirToJson+f)
+          resultat = searchWords(wordToFind, dirToJson+f)
           print resultat
-
-
-
-
 
 
 #<------ end main -------
