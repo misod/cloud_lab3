@@ -30,4 +30,4 @@ if __name__ == '__main__':
         if i > 10:
             return wordToFind
 
-    return wordToFind
+print wordToFind
