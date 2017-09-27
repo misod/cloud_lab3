@@ -18,12 +18,13 @@ def stringClean(string):
     return stringSplit
 
 def countWordsInString(wordsToSearch, string):
+    wordToFind_c = copy.deepcopy(wordsToSearch)
     stringPrepared = stringClean(string)
-    for wordToFind in wordsToSearch:
+    for wordToFind in wordToFind_c:
         if arrayHasWord(stringPrepared, wordToFind[0]):
             wordToFind[1] += 1
 
-    return wordsToSearch
+    return wordToFind_c
 
 @app.task
 def searchWords(wordsToSearch, patToFile):
@@ -36,7 +37,7 @@ def searchWords(wordsToSearch, patToFile):
                     parsedJson = json.loads(line)
                     #-------------------------------------implementera att plocka bort reetweet
                     stringToAnalyze = parsedJson['text']
-                    countWordsInString(wordsToSearch, stringToAnalyze)
+                    wordsToSearch = countWordsInString(wordsToSearch, stringToAnalyze)
 
                     # i += 1
                     # if i > 8000:
