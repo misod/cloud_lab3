@@ -39,6 +39,7 @@ if __name__ == '__main__':
               listWithInstances.append(searchWords.delay(wordToFind_c, dirToJson+f))
 
     i = 0
+    print wordToFind_c
     while len(listWithInstances) != 0:
         for instance in listWithInstances:
             if instance.ready():
