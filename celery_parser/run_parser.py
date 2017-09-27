@@ -1,7 +1,7 @@
 from .parsning import searchWords
 import time, os
 
-dirToJson = '../data/'
+dirToJson = 'data/'
 wordToFind = [['han', 0], ['hon', 0], ['den', 0], ['det',0], ['denna',0], ['denne', 0], ['hen',0]]
 
 def getFiles(dirToJson):
