@@ -17,12 +17,12 @@ def getFiles(dirToJson):
 def addWordCount(listAddTo, listAddFrom):
     i = 0
     for e in listAddTo:
-        print "-------------------------------------------------"
-        print listAddTo[i][1], " + ", listAddFrom[i][1], " = ", listAddTo[i][1] + listAddFrom[i][1]
+        # print "-------------------------------------------------"
+        # print listAddTo[i][1], " + ", listAddFrom[i][1], " = ", listAddTo[i][1] + listAddFrom[i][1]
         listAddTo[i][1] += listAddFrom[i][1]
-        print listAddTo[i][1]
-        print "-------------------------------------------------"
-        i += 1
+        # print listAddTo[i][1]
+        # print "-------------------------------------------------"
+        # i += 1
 
 
     return listAddTo
