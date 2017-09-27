@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-from celery import Celery
+from celery_init import Celery
 
 app = Celery('celery_parser',
              broker='amqp://jag:jag123@localhost/jag_vhost',
