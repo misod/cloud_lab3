@@ -51,7 +51,7 @@ if __name__ == '__main__':
                 listWithInstances.remove(instance)
         time.sleep(2)
         i1 += 1
-        if i > 40:
+        if i1 > 40:
             print 'avbruten exe'
             break
 
