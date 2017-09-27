@@ -43,8 +43,9 @@ if __name__ == '__main__':
     while len(listWithInstances) != 0:
         for instance in listWithInstances:
             if instance.ready():
-                print instance.result
-                addWordCount(wordToFind, instance.result)
+                res = instance.result
+                print res
+                addWordCount(wordToFind, res)
                 listWithInstances.remove(instance)
         time.sleep(2)
         i += 1
@@ -52,4 +53,5 @@ if __name__ == '__main__':
             print 'avbruten exe'
             break
 
+print "final res"
 print wordToFind
