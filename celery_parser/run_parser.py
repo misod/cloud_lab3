@@ -9,7 +9,7 @@ def getFiles(dirToJson):
         filesInDir = os.listdir(dirToJson)
         return filesInDir
     except Exception as e:
-        print 'exeption: ----> ' + e
+        print e
 
     return
 
