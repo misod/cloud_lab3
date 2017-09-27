@@ -28,7 +28,7 @@ if __name__ == '__main__':
     files = getFiles(dirToJson)
     listWithInstances = []
     #adds all active instances to list
-    print 'found ' + len(files) + ' in that folder'
+    print 'found '  len(files)  ' in that folder'
     for f in files:
         wordToFind_c = copy.deepcopy(wordToFind)
         if f[0] != '.':
