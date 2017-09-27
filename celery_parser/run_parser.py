@@ -5,13 +5,14 @@ dirToJson = '../data/'
 wordToFind = [['han', 0], ['hon', 0], ['den', 0], ['det',0], ['denna',0], ['denne', 0], ['hen',0]]
 
 def getFiles(dirToJson):
+
     try:
         filesInDir = os.listdir(dirToJson)
         return filesInDir
     except Exception as e:
         print e
 
-    return ''
+    return []
 
 def addWordCount(listAddTo, listAddFrom):
     i = 0
