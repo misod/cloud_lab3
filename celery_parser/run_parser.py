@@ -44,6 +44,7 @@ if __name__ == '__main__':
         for instance in listWithInstances:
             if instance.ready():
                 res = instance.result
+                print "resultat i lista"
                 print res
                 addWordCount(wordToFind, res)
                 listWithInstances.remove(instance)
