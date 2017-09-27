@@ -4,10 +4,23 @@ import time
 dirToJson = '../data/'
 wordToFind = [['han', 0], ['hon', 0], ['den', 0], ['det',0], ['denna',0], ['denne', 0], ['hen',0]]
 
-def addWordCount(listAddTo, listAddFrom):
-
+def getFiles(dirToJson):
+    try:
+        filesInDir = os.listdir(dirToJson)
+        return filesInDir
+    except Exception as e:
+        print('exeption: ----> ' + e)
 
     return
+
+def addWordCount(listAddTo, listAddFrom):
+    i = 0
+    for e in listAddTo:
+        listAddTo[i][1] += listAddFrom[i][1]
+        i += 1
+
+
+    return listAddTo
 
 if __name__ == '__main__':
 
