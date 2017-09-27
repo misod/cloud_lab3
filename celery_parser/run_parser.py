@@ -22,7 +22,7 @@ def addWordCount(listAddTo, listAddFrom):
         listAddTo[i][1] += listAddFrom[i][1]
         # print listAddTo[i][1]
         # print "-------------------------------------------------"
-        # i += 1
+        i += 1
 
 
     return listAddTo
