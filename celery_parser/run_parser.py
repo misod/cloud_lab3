@@ -7,6 +7,7 @@ wordToFind = [['han', 0], ['hon', 0], ['den', 0], ['det',0], ['denna',0], ['denn
 def getFiles(dirToJson):
 
     try:
+        print os.listdir('.')
         filesInDir = os.listdir(dirToJson)
         return filesInDir
     except Exception as e:
