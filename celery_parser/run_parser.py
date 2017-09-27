@@ -38,9 +38,10 @@ if __name__ == '__main__':
         if f[0] != '.':
               listWithInstances.append(searchWords.delay(wordToFind_c, dirToJson+f))
 
-    i = 0
+    i1 = 0
     print wordToFind_c
     while len(listWithInstances) != 0:
+        print "loop: ", i1
         for instance in listWithInstances:
             if instance.ready():
                 res = instance.result
@@ -49,7 +50,7 @@ if __name__ == '__main__':
                 addWordCount(wordToFind, res)
                 listWithInstances.remove(instance)
         time.sleep(2)
-        i += 1
+        i1 += 1
         if i > 40:
             print 'avbruten exe'
             break
