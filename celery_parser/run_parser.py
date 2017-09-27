@@ -24,10 +24,11 @@ def addWordCount(listAddTo, listAddFrom):
     return listAddTo
 
 if __name__ == '__main__':
-
+    print "starting to search in folder "+dirToJson
     files = getFiles(dirToJson)
     listWithInstances = []
     #adds all active instances to list
+    print "found " + len(files) + " in that folder"
     for f in files:
         wordToFind_c = copy.deepcopy(wordToFind)
         if f[0] != '.':
@@ -37,6 +38,7 @@ if __name__ == '__main__':
     while len(listWithInstances) != 0:
         for instance in listWithInstances:
             if instance.ready():
+                print instance.result
                 addWordCount(wordToFind, instance.result)
                 listWithInstances.remove(instance)
         time.sleep(2)
