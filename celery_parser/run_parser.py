@@ -11,7 +11,7 @@ def getFiles(dirToJson):
     except Exception as e:
         print e
 
-    return
+    return ''
 
 def addWordCount(listAddTo, listAddFrom):
     i = 0
