@@ -1,5 +1,5 @@
 import os, json, urllib, copy, re
-
+from parsning import searchWords
 
 dirToJson = '../data/'
 wordToFind = [['han', 0], ['hon', 0], ['den', 0], ['det',0], ['denna',0], ['denne', 0], ['hen',0]]
@@ -38,30 +38,24 @@ def countWordsInString(wordsToSearch, string):
 
     return wordsToSearch
 
-def searchWords(wordsToSearch, patToFile):
-    i = 1
-    fileStream = open(patToFile, 'r')
-    try:
-        with fileStream as openFile:
-            for line in openFile:
-                if line != '\n':
-                    parsedJson = json.loads(line)
-                    if not parsedJson.has_key('retweeted_status'):
-                        stringToAnalyze = parsedJson['text']
-                        wordsToSearch = countWordsInString(wordsToSearch, stringToAnalyze)
-
-
-                    # i += 1
-                    # if i > 2000:
-                    #     print 'raderna i filen klar ------->'
-                    #     return wordsToSearch
-
-    except Exception as e:
-            print "problem i searchWords ---->", e
-    finally:
-        fileStream.close()
-
-    return wordsToSearch
+# def searchWords(wordsToSearch, patToFile):
+#
+#     fileStream = open(patToFile, 'r')
+#     try:
+#         with fileStream as openFile:
+#             for line in openFile:
+#                 if line != '\n':
+#                     parsedJson = json.loads(line)
+#                     if not parsedJson.has_key('retweeted_status'):
+#                         stringToAnalyze = parsedJson['text']
+#                         wordsToSearch = countWordsInString(wordsToSearch, stringToAnalyze)
+#
+#     except Exception as e:
+#             print "problem i searchWords ---->", e
+#     finally:
+#         fileStream.close()
+#
+#     return wordsToSearch
 
 
 #---- main --->
