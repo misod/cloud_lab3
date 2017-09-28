@@ -46,14 +46,13 @@ if __name__ == '__main__':
             if instance.ready():
                 res = instance.result
                 #print "resultat i lista"
-                print res
                 addWordCount(wordToFind, res)
                 listWithInstances.remove(instance)
         time.sleep(2)
-        i1 += 1
-        if i1 > 40:
-            print 'avbruten exe'
-            break
+        # i1 += 1
+        # if i1 > 40:
+        #     print 'avbruten exe'
+        #     break
 
 print "final res"
 print wordToFind
