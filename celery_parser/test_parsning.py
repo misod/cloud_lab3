@@ -38,24 +38,24 @@ def countWordsInString(wordsToSearch, string):
 
     return wordsToSearch
 
-# def searchWords(wordsToSearch, patToFile):
-#
-#     fileStream = open(patToFile, 'r')
-#     try:
-#         with fileStream as openFile:
-#             for line in openFile:
-#                 if line != '\n':
-#                     parsedJson = json.loads(line)
-#                     if not parsedJson.has_key('retweeted_status'):
-#                         stringToAnalyze = parsedJson['text']
-#                         wordsToSearch = countWordsInString(wordsToSearch, stringToAnalyze)
-#
-#     except Exception as e:
-#             print "problem i searchWords ---->", e
-#     finally:
-#         fileStream.close()
-#
-#     return wordsToSearch
+def searchWords(wordsToSearch, patToFile):
+
+    fileStream = open(patToFile, 'r')
+    try:
+        with fileStream as openFile:
+            for line in openFile:
+                if line != '\n':
+                    parsedJson = json.loads(line)
+                    if not parsedJson.has_key('retweeted_status'):
+                        stringToAnalyze = parsedJson['text']
+                        wordsToSearch = countWordsInString(wordsToSearch, stringToAnalyze)
+
+    except Exception as e:
+            print "problem i searchWords ---->", e
+    finally:
+        fileStream.close()
+
+    return wordsToSearch
 
 
 #---- main --->

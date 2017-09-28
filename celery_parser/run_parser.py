@@ -1,7 +1,7 @@
 from .parsning import searchWords
 import os, json, urllib, copy, re, time
 
-dirToJson = 'data/'
+dirToJson = 'data_t/'
 wordToFind = [['han', 0], ['hon', 0], ['den', 0], ['det',0], ['denna',0], ['denne', 0], ['hen',0]]
 
 def getFiles(dirToJson):
@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
 
     print len(listWithInstances)
-    
+
     while len(listWithInstances) != 0:
         #print "loop: ", i1
         for instance in listWithInstances:
