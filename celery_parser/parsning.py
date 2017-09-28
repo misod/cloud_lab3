@@ -35,7 +35,6 @@ def searchWords(wordsToSearch, patToFile):
             for line in openFile:
                 if line != '\n':
                     parsedJson = json.loads(line)
-
                     if not parsedJson.has_key('retweeted_status'):
                         stringToAnalyze = parsedJson['text']
                         wordsToSearch = countWordsInString(wordsToSearch, stringToAnalyze)
