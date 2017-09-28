@@ -38,8 +38,9 @@ if __name__ == '__main__':
         if f[0] != '.':
               listWithInstances.append(searchWords.delay(wordToFind_c, dirToJson+f))
 
-    i1 = 0
-    print wordToFind_c
+
+    print len(listWithInstances)
+    
     while len(listWithInstances) != 0:
         #print "loop: ", i1
         for instance in listWithInstances:

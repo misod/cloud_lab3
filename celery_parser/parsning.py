@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-#from celery_parser.celery import app
+from celery_parser.celery import app
 import os, json, urllib, copy, re
 
 # dirToJson = 'data/'
@@ -25,7 +25,7 @@ def countWordsInString(wordsToSearch, string):
 
     return wordsToSearch
 
-#@app.task
+@app.task
 def searchWords(wordsToSearch, patToFile):
     #i = 1
     fileStream = open(patToFile, 'r')
