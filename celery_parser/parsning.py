@@ -25,7 +25,7 @@ def countWordsInString(wordsToSearch, string):
 
     return wordsToSearch
 
-@app.task
+#@app.task
 def searchWords(wordsToSearch, patToFile):
     #i = 1
     fileStream = open(patToFile, 'r')
