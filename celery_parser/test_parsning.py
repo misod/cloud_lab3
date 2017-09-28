@@ -1,9 +1,18 @@
-from __future__ import absolute_import
-from celery_parser.celery import app
 import os, json, urllib, copy, re
 
-# dirToJson = 'data/'
-# wordToFind = [['han', 0], ['hon', 0], ['den', 0], ['det',0], ['denna',0], ['denne', 0], ['hen',0]]
+
+dirToJson = '../data/'
+wordToFind = [['han', 0], ['hon', 0], ['den', 0], ['det',0], ['denna',0], ['denne', 0], ['hen',0]]
+
+
+def getFiles(dirToJson):
+    try:
+        filesInDir = os.listdir(dirToJson)
+        return filesInDir
+    except Exception as e:
+        print('exeption: ----> ', e)
+
+    return
 
 def arrayHasWord(array, word):
     for element in array:
@@ -18,17 +27,19 @@ def stringClean(string):
     return stringSplit
 
 def countWordsInString(wordsToSearch, string):
-    wordToFind_c = copy.deepcopy(wordsToSearch)
     stringPrepared = stringClean(string)
-    for wordToFind in wordToFind_c:
+    for wordToFind in wordsToSearch:
         if arrayHasWord(stringPrepared, wordToFind[0]):
             wordToFind[1] += 1
+    # print
+    # print string
+    # print wordsToSearch
+    # print
 
-    return wordToFind_c
+    return wordsToSearch
 
-@app.task
 def searchWords(wordsToSearch, patToFile):
-    #i = 1
+    i = 1
     fileStream = open(patToFile, 'r')
     try:
         with fileStream as openFile:
@@ -37,17 +48,24 @@ def searchWords(wordsToSearch, patToFile):
                     parsedJson = json.loads(line)
 
                     if not parsedJson.has_key('retweeted_status'):
+
                         stringToAnalyze = parsedJson['text']
+                        # print
+                        #print '<------------------>'
+                        # print stringToAnalyze.lower()
+                        # print countWordsInString(wordsToSearch, stringToAnalyze)
+                        # print
                         wordsToSearch = countWordsInString(wordsToSearch, stringToAnalyze)
 
+
                     # i += 1
-                    # if i > 8000:
+                    # if i > 2000:
                     #     print 'raderna i filen klar ------->'
                     #     return wordsToSearch
 
 
     except Exception as e:
-            print "problem i searchWords ---->" + e
+            print "problem i searchWords ---->", e
     finally:
         fileStream.close()
 
@@ -55,14 +73,18 @@ def searchWords(wordsToSearch, patToFile):
 
 
 #---- main --->
-#
-# files = getFiles(dirToJson)
-#
-# for f in files:
-#     #wordToFind_c = copy.deepcopy(wordToFind)
-#     if f[0] != '.':
-#           resultat = searchWords(wordToFind, dirToJson+f)
-#           print resultat
-#
+
+files = getFiles(dirToJson)
+
+for f in files:
+    #wordToFind_c = copy.deepcopy(wordToFind)
+    if f[0] != '.':
+          resultat = searchWords(wordToFind, dirToJson+f)
+          print resultat
+
+
+
+
+
 
 #<------ end main -------
