@@ -76,9 +76,9 @@ def searchWords(wordsToSearch, patToFile):
 files = getFiles(dirToJson)
 
 for f in files:
-    #wordToFind_c = copy.deepcopy(wordToFind)
+    wordToFind_c = copy.deepcopy(wordToFind)
     if f[0] != '.':
-          resultat = searchWords(wordToFind, dirToJson+f)
+          resultat = searchWords(wordToFind_c, dirToJson+f)
           print resultat
 
 
