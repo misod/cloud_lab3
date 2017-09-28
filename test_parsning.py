@@ -30,6 +30,10 @@ def countWordsInString(wordsToSearch, string):
     for wordToFind in wordsToSearch:
         if arrayHasWord(stringPrepared, wordToFind[0]):
             wordToFind[1] += 1
+    print
+    print string
+    print wordsToSearch
+    print
 
     return wordsToSearch
 
