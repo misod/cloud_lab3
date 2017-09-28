@@ -46,15 +46,8 @@ def searchWords(wordsToSearch, patToFile):
             for line in openFile:
                 if line != '\n':
                     parsedJson = json.loads(line)
-
                     if not parsedJson.has_key('retweeted_status'):
-
                         stringToAnalyze = parsedJson['text']
-                        # print
-                        #print '<------------------>'
-                        # print stringToAnalyze.lower()
-                        # print countWordsInString(wordsToSearch, stringToAnalyze)
-                        # print
                         wordsToSearch = countWordsInString(wordsToSearch, stringToAnalyze)
 
 
@@ -62,7 +55,6 @@ def searchWords(wordsToSearch, patToFile):
                     # if i > 2000:
                     #     print 'raderna i filen klar ------->'
                     #     return wordsToSearch
-
 
     except Exception as e:
             print "problem i searchWords ---->", e

@@ -18,13 +18,12 @@ def stringClean(string):
     return stringSplit
 
 def countWordsInString(wordsToSearch, string):
-    wordToFind_c = copy.deepcopy(wordsToSearch)
     stringPrepared = stringClean(string)
-    for wordToFind in wordToFind_c:
+    for wordToFind in wordsToSearch:
         if arrayHasWord(stringPrepared, wordToFind[0]):
             wordToFind[1] += 1
 
-    return wordToFind_c
+    return wordsToSearch
 
 @app.task
 def searchWords(wordsToSearch, patToFile):
