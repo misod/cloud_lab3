@@ -41,11 +41,11 @@ if __name__ == '__main__':
     i1 = 0
     print wordToFind_c
     while len(listWithInstances) != 0:
-        print "loop: ", i1
+        #print "loop: ", i1
         for instance in listWithInstances:
             if instance.ready():
                 res = instance.result
-                print "resultat i lista"
+                #print "resultat i lista"
                 print res
                 addWordCount(wordToFind, res)
                 listWithInstances.remove(instance)
