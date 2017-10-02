@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-from parsning import searchWords
+from .parsning import searchWords
 import os, json, urllib, copy, re, time
 
 dirToJson = 'data/'
@@ -28,7 +28,7 @@ def addWordCount(listAddTo, listAddFrom):
 
     return listAddTo
 
-def run_pars():
+def run():
 
     print "starting to search in folder "+dirToJson
     files = getFiles(dirToJson)
@@ -52,8 +52,13 @@ def run_pars():
                 addWordCount(wordToFind, res)
                 listWithInstances.remove(instance)
         time.sleep(2)
+        # i1 += 1
+        # if i1 > 40:
+        #     print 'avbruten exe'
+        #     break
 
-    return wordToFind
+print "final res"
+print wordToFind
 
 # if __name__ == '__main__':
 #     print "starting to search in folder "+dirToJson

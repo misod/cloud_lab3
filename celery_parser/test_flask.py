@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-from run_parser import run_pars
+from .run_parser import run_pars
 from flask import Flask, jsonify
 
 app = Flask(__name__)

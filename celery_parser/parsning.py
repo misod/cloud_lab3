@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-from celery import app
+from celery_parser.celery import app
 import os, json, urllib, copy, re
 
 # dirToJson = 'data/'
