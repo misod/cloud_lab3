@@ -52,13 +52,8 @@ def run_pars():
                 addWordCount(wordToFind, res)
                 listWithInstances.remove(instance)
         time.sleep(2)
-        # i1 += 1
-        # if i1 > 40:
-        #     print 'avbruten exe'
-        #     break
 
-print "final res"
-print wordToFind
+    return wordToFind
 
 # if __name__ == '__main__':
 #     print "starting to search in folder "+dirToJson
