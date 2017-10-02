@@ -1,6 +1,7 @@
 #!flask/bin/python
-from flask import Flask, jsonify
+from __future__ import absolute_import
 from run_parser import *
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
