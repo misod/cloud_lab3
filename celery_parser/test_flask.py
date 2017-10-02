@@ -1,6 +1,6 @@
 #!flask/bin/python
 from flask import Flask, jsonify
-from celery.run_parser import run_pars
+from celery_parser.run_parser import run_pars
 
 app = Flask(__name__)
 
