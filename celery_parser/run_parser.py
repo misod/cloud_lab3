@@ -28,7 +28,7 @@ def addWordCount(listAddTo, listAddFrom):
 
     return listAddTo
 
-def run():
+def run_pars():
 
     print "starting to search in folder "+dirToJson
     files = getFiles(dirToJson)
