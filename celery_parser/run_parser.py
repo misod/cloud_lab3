@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from .parsning import searchWords
 import os, json, urllib, copy, re, time
 
