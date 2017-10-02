@@ -7,7 +7,7 @@ app = Flask("celery_parser")
 
 @app.route('/todo/', methods=['GET'])
 def get_tasks():
-    return "Hello, World!"
+    return run_pars()
 
 if __name__ == '__main__':
     app.run(debug=True)
