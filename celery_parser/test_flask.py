@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/todo/', methods=['GET'])
 def get_tasks():
-    return run_pars()
+    return "Hello, World!"
 
 if __name__ == '__main__':
     app.run(debug=True)
