@@ -7,7 +7,7 @@ app = Flask("celery_parser")
 
 @app.route('/todo/', methods=['GET'])
 def get_tasks():
-    return run_pars()
+    return jsonify({'tasks': run_pars()})
 
 if __name__ == '__main__':
     app.run(debug=True)
