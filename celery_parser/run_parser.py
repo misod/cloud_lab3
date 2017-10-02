@@ -27,7 +27,8 @@ def addWordCount(listAddTo, listAddFrom):
 
     return listAddTo
 
-if __name__ == '__main__':
+def run_pars():
+
     print "starting to search in folder "+dirToJson
     files = getFiles(dirToJson)
     listWithInstances = []
@@ -50,10 +51,36 @@ if __name__ == '__main__':
                 addWordCount(wordToFind, res)
                 listWithInstances.remove(instance)
         time.sleep(2)
-        # i1 += 1
-        # if i1 > 40:
-        #     print 'avbruten exe'
-        #     break
 
-print "final res"
-print wordToFind
+    return wordToFind
+
+# if __name__ == '__main__':
+#     print "starting to search in folder "+dirToJson
+#     files = getFiles(dirToJson)
+#     listWithInstances = []
+#     #adds all active instances to list
+#     print 'found ', len(files),  ' in that folder'
+#     for f in files:
+#         wordToFind_c = copy.deepcopy(wordToFind)
+#         if f[0] != '.':
+#               listWithInstances.append(searchWords.delay(wordToFind_c, dirToJson+f))
+#
+#
+#     print len(listWithInstances)
+#
+#     while len(listWithInstances) != 0:
+#         #print "loop: ", i1
+#         for instance in listWithInstances:
+#             if instance.ready():
+#                 res = instance.result
+#                 #print "resultat i lista"
+#                 addWordCount(wordToFind, res)
+#                 listWithInstances.remove(instance)
+#         time.sleep(2)
+#         # i1 += 1
+#         # if i1 > 40:
+#         #     print 'avbruten exe'
+#         #     break
+#
+# print "final res"
+# print wordToFind
