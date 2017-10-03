@@ -5,7 +5,7 @@ from flask import Flask, jsonify
 app = Flask("celery_parser")
 
 
-@app.route('/todo/', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_tasks():
     return jsonify({'tasks': run_pars()})
 
